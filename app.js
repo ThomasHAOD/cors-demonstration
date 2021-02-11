@@ -15,6 +15,12 @@ app.get('/', (request, response) => {
     info: 'This is a CORS Test, you have successfully hit the API',
   });
 });
+app.post('/', (request, response) => {
+  const greeting = request.body.greeting;
+  response.json({
+    response: `${greeting} to you too!`,
+  });
+});
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`);
